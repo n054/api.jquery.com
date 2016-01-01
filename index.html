@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Api.jquery.com by n054</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Api.jquery.com</h1>
+      <h2 class="project-tagline">API Documentation for jQuery Core</h2>
+      <a href="https://github.com/n054/api.jquery.com" class="btn">View on GitHub</a>
+      <a href="https://github.com/n054/api.jquery.com/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/n054/api.jquery.com/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="apijquerycom" class="anchor" href="#apijquerycom" aria-hidden="true"><span class="octicon octicon-link"></span></a>api.jquery.com</h1>
+
+<h2>
+<a id="building-and-deploying" class="anchor" href="#building-and-deploying" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building and Deploying</h2>
+
+<p>To build and deploy your changes for previewing in a <a href="https://github.com/jquery/jquery-wp-content"><code>jquery-wp-content</code></a> instance, follow the <a href="http://contribute.jquery.org/web-sites/#workflow">workflow instructions</a> from our documentation on <a href="http://contribute.jquery.org/web-sites/">contributing to jQuery Foundation web sites</a>.</p>
+
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<ul>
+<li><a href="http://xmlsoft.org/">libxml2</a></li>
+<li><a href="http://xmlsoft.org/libxslt/">libxslt</a></li>
+</ul>
+
+<p>The <code>xmllint</code> and <code>xsltproc</code> utilities need to be in your path. If you are on Windows, you can get libxml2 and libxslt from <a href="http://www.zlatkovic.com/libxml.en.html">zlatkovic.com</a>.</p>
+
+<p><strong>Note</strong>: If you're using Windows and you receive the error "Error" when executing the task <code>build-xml-entries:all</code>, try to add the DLL <code>libwinpthread-1.dll</code> in the root of the project.</p>
+
+<h2>
+<a id="style-guidelines" class="anchor" href="#style-guidelines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Style Guidelines</h2>
+
+<h3>
+<a id="prose-style--grammar" class="anchor" href="#prose-style--grammar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prose Style &amp; Grammar</h3>
+
+<h4>
+<a id="sentence-structure" class="anchor" href="#sentence-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sentence Structure</h4>
+
+<ul>
+<li>Write in clear, easy-to-understand statements.</li>
+<li>Keep sentences short and to the point.</li>
+<li>Include the Oxford (serial) comma in a list of three or more items.
+
+<ul>
+<li>
+<strong>Yes</strong>: The <code>load</code>, <code>scroll</code>, and <code>error</code> events (e.g., on an <code>&lt;img&gt;</code> element) do not bubble</li>
+<li>
+<strong>No</strong>: The <code>load</code>, <code>scroll</code> and <code>error</code> events (e.g., on an <code>&lt;img&gt;</code> element) do not bubble</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="spelling" class="anchor" href="#spelling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spelling</h4>
+
+<ul>
+<li>The documentation standardizes on American English spelling. For example:
+
+<ul>
+<li>
+<strong>Yes</strong>: color, while, among, customize, argument</li>
+<li>
+<strong>No</strong>: colour, whilst, amongst, customise, arguement</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="pronoun-usage" class="anchor" href="#pronoun-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pronoun Usage</h4>
+
+<ul>
+<li>Use second-person pronoun ("you") when necessary, but try to avoid it.</li>
+<li>Favor the definite article ("the") over second-person possessive ("your").
+
+<ul>
+<li>
+<strong>Yes</strong>: Insert the paragraph after the unordered list.</li>
+<li>
+<strong>No</strong>: Insert your paragraph after the unordered list.</li>
+</ul>
+</li>
+<li>When editing current entries, change first-person plural pronouns ("we," "our," "us") to second-person.
+
+<ul>
+<li>
+<strong>Yes</strong>: The <code>.insertAfter()</code> method here adds an unordered list beneath the paragraph.</li>
+<li>
+<strong>No</strong>: And now we have our paragraph beneath the unordered list.</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="voice" class="anchor" href="#voice" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Voice"</h4>
+
+<ul>
+<li>Prefer active voice over passive.
+
+<ul>
+<li>
+<strong>Active</strong>: Calling <code>.click()</code> binds a click handler to the elements in the collection</li>
+<li>
+<strong>Passive</strong>: Click handlers are bound to elements in the collection when <code>.click()</code> is called</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="code-style" class="anchor" href="#code-style" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Style</h3>
+
+<p>Code in the API documentation should follow the <a href="http://contribute.jquery.org/style-guide/">jQuery Core Style Guide</a> with the following addition:</p>
+
+<ul>
+<li>
+<strong>Document ready syntax</strong>: Use <code>$( document ).ready(function() {</code> instead of <code>$(function() {</code> as it's harder for new users to distinguish the difference between the latter and an IIFE.</li>
+</ul>
+
+<h4>
+<a id="code-within-prose-content-paragraphs-and-the-like" class="anchor" href="#code-within-prose-content-paragraphs-and-the-like" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code within prose content (paragraphs and the like):</h4>
+
+<ul>
+<li>Methods: use a dot, followed by the method name, followed by parentheses: e.g. The <code>.focus()</code> method is a shortcut for <code>.on( "focus", handler )</code> in the first and second variations, and <code>.trigger( "focus" )</code> in the third.</li>
+<li>Properties: use a dot, followed by the property name: e.g. <code>.length</code>.</li>
+<li>Functions: use the function name, followed by parentheses: <code>myFunction()</code>.</li>
+</ul>
+
+<h4>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h4>
+
+<ul>
+<li>Examples should indicate what the expected result will be before presenting the code. This makes code clearer and skimming easier, especially for newer coders who may not understand what is supposed to be happening from reading the code itself.
+
+<ul>
+<li>
+<strong>Yes</strong>: Find all p elements that are children of a div element and apply a border to them.</li>
+<li>
+<strong>No</strong>: Find all p elements that are children of a div element.</li>
+</ul>
+</li>
+<li>Make your example easy to follow with good comments so that the explanation isn't necessary.</li>
+</ul>
+
+<h3>
+<a id="rhetorical-context" class="anchor" href="#rhetorical-context" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rhetorical Context</h3>
+
+<ul>
+<li>Subject
+
+<ul>
+<li>The entirety of jQuery's public API</li>
+</ul>
+</li>
+<li>Audience
+
+<ul>
+<li>jQuery users</li>
+<li>International: Native and non-native English readers</li>
+<li>Experience Level: Absolute beginner through expert</li>
+<li>First-time through frequent consumers of site</li>
+</ul>
+</li>
+<li>Purpose
+
+<ul>
+<li>Describe comprehensively and accessibly every public method, property, and selector in the jQuery library</li>
+<li>Reinforce understanding of concepts through relevant code examples</li>
+<li>Demonstrate the effect the methods have by executing code examples</li>
+</ul>
+</li>
+<li>Authors
+
+<ul>
+<li>Proficient in JavaScript development</li>
+<li>Well versed in jQuery best practices</li>
+<li>Strong in English writing</li>
+</ul>
+</li>
+<li>Tone
+
+<ul>
+<li>Middle ground between formal and familiar. Err on the side of formality.</li>
+<li>Authoritative</li>
+<li>Tactful</li>
+</ul>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/n054/api.jquery.com">Api.jquery.com</a> is maintained by <a href="https://github.com/n054">n054</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
